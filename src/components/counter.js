@@ -5,14 +5,16 @@ class Counter{
 
     increment(){
         this.count=this.count+1;
+        this.updateValue();
     }
 
     decrement(){
         this.count=this.count-1;
+        this.updateValue();
     }
 
     updateValue(){
-        const counterValue=document.getElementById();
+        const counterValue=document.getElementById("counterValue");
         counterValue.innerText=`Count: ${this.count}`;
     }
 
@@ -38,6 +40,9 @@ class Counter{
         counterContainer.appendChild(counterValue);
         counterContainer.appendChild(incrementButton);
         counterContainer.appendChild(decrementButton);
+
+        incrementButton.addEventListener('click',this.increment.bind(this));
+        decrementButton.addEventListener('click',this.decrement.bind(this));
 
         return counterContainer;
     }
