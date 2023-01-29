@@ -45,14 +45,12 @@ class Timer{
     }
 
     startTimer(){
-        this.sec=0;
-        this.min=0;
-        this.hour=0;
-        this.timeout=setInterval(this.timer.bind(this),100);
+       this.timeout=setInterval(this.timer.bind(this),100);
     }
 
     pauseTimer(){
         clearInterval(this.timeout);
+        this.timeout=0;
     }
 
     resetTimer(){
