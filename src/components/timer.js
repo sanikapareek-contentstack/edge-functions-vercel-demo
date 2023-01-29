@@ -2,36 +2,67 @@ import { generateUniqueId } from "../generateUniqueId.js";
 let i=0;
 class Timer{
     constructor(){
-        this.hour=0;
-        this.min=0;
         this.sec=0;
-        this.timer=null;
+        this.min=0;
+        this.hour=0;
+        this.timeout=0;
         this.uniqueId=generateUniqueId(i.toString());
+        console.log(this.uniqueId)
         i++;
     }
 
     timer(){
-        this.sec=this.sec+1;
-        if(this.sec/60==1){
-            this.min=this.min+1;
+        
+        let displayHour=""
+        let displayMin=""
+        let displaySec=""
+        this.sec++;
+        if(this.sec/60===1){
+            this.min++;
             this.sec=0;
         }
-        if(this.min/60==1){
-            this.hour=this.hour+1;
+        if(this.min/60===1){
+            this.hour++;
             this.min=0;
         }
-
+        // console.log(this.hour," ",this.min," ",this.sec)
+        if(this.sec<10){
+            displaySec="0"+this.sec.toString();
+        }else{
+            displaySec=this.sec.toString();
+        }
+        if(this.min<10){
+            displayMin="0"+this.min.toString();
+        }else{
+            displayMin=this.min.toString();
+        }
+        if(this.hour<10){
+            displayHour="0"+this.hour.toString();
+        }else{
+            displayHour=this.hour.toString();
+        }
+        const timerValue=document.getElementById(this.uniqueId);
+        timerValue.innerText=`${displayHour}:${displayMin}:${displaySec}`;
     }
 
     startTimer(){
-
+        this.sec=0;
+        this.min=0;
+        this.hour=0;
+        this.timeout=setInterval(this.timer.bind(this),100);
     }
 
     pauseTimer(){
-
+        clearInterval(this.timeout);
     }
 
     resetTimer(){
+        clearInterval(this.timeout);
+        this.sec=0;
+        this.min=0;
+        this.hour=0;
+        const timerValue=document.getElementById(this.uniqueId);
+        timerValue.innerText=`00:00:00`;
 
     }
 
@@ -61,6 +92,10 @@ class Timer{
         timerContainer.appendChild(startButton);
         timerContainer.appendChild(pauseButton);
         timerContainer.appendChild(resetButton);
+
+        startButton.addEventListener('click',this.startTimer.bind(this));
+        pauseButton.addEventListener('click',this.pauseTimer.bind(this));
+        resetButton.addEventListener('click',this.resetTimer.bind(this));
 
         return timerContainer;
 

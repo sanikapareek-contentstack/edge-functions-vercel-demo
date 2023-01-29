@@ -9,3 +9,6 @@ counter2.mount(document.getElementById("root"));
 
 const timer1=new Timer();
 timer1.mount(document.getElementById("root"));
+
+const timer2=new Timer();
+timer2.mount(document.getElementById("root"));
