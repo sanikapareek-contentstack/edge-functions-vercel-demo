@@ -5,7 +5,7 @@ class Timer{
         this.sec=0;
         this.min=0;
         this.hour=0;
-        this.timeout=0;
+        this.timeout=null;
         this.uniqueId=generateUniqueId(i.toString());
         i++;
     }
@@ -45,12 +45,17 @@ class Timer{
     }
 
     startTimer(){
+        console.log(this.timeout);
+        if(this.timeout!==null){
+            
+            return;
+        }
        this.timeout=setInterval(this.timer.bind(this),100);
     }
 
     pauseTimer(){
         clearInterval(this.timeout);
-        this.timeout=0;
+        this.timeout=null;
     }
 
     resetTimer(){
@@ -58,6 +63,7 @@ class Timer{
         this.sec=0;
         this.min=0;
         this.hour=0;
+        this.timeout=null;
         const timerValue=document.getElementById(this.uniqueId);
         timerValue.innerText=`00:00:00`;
 
