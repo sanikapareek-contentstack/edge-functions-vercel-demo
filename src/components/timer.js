@@ -7,7 +7,6 @@ class Timer{
         this.hour=0;
         this.timeout=0;
         this.uniqueId=generateUniqueId(i.toString());
-        console.log(this.uniqueId)
         i++;
     }
 
