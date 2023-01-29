@@ -10,4 +10,6 @@
 </ul>
 </p>
 <h2>Counter Component</h2>
-<p></p>
+<p>Counter component has two button namely '+' and '-'. On clicking on '+' button the count increments by 1 and on clicking on '-' button count decrements by 1.</p>
+<h2>Timer Component</h2>
+<p>Timer is of the format (hrs:mins:secs). Timer component has three button namely 'Start', 'Pause' and 'Reset'. On clicking on 'Start' button the timer will start, on clicking on 'Pause' button timer will pause and on clicking on 'Reset' button timer will reset to 00:00:00.</p>
