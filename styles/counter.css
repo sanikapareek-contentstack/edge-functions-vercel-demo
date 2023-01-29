@@ -1,0 +1,34 @@
+.counterContainer{
+    display: block;
+    width: 450px;
+    margin: auto;
+    border: 1px solid grey;
+    padding: 14px 20px;
+    text-align: center;
+    border-radius: 20px;
+    background:linear-gradient(to top,#c4c5c7 0%,#dcdddf 52%,#ebebeb 100%);
+    margin-top: 100px;
+}
+
+#incrementButton,#decrementButton{
+    font-size: 20px;
+    padding: 3px 10px;
+    border: 1.5px solid rgb(165, 163, 163);
+    width: 80px;
+    border-radius: 10px;
+    margin-right: 10px;
+    background: rgb(224, 223, 223);
+}
+
+#decrementButton{
+    padding: 3px 12px;
+}
+
+.counterContainer p{
+    margin-top: 30px;
+    font-size: 1.5rem;
+}
+
+#incrementButton:hover,#decrementButton:hover{
+    transform: scale(1.2);
+}
