@@ -37,8 +37,8 @@ class Counter{
         counterContainer.classList.add("counterContainer");
         counterHeading.classList.add("counterHeading");
         counterValue.id=this.uniqueId;
-        incrementButton.id="incrementButton";
-        decrementButton.id="decrementButton";
+        incrementButton.id="incrementBtn";
+        decrementButton.id="decrementBtn";
 
         counterContainer.appendChild(counterHeading);
         counterContainer.appendChild(counterValue);
@@ -53,9 +53,11 @@ class Counter{
 
     mount(el){
         if(el){
-            return el.appendChild(this.render());
+            el.appendChild(this.render());
+            return;
         }
-        return document.body.appendChild(this.render());
+        document.body.appendChild(this.render());
+        return; 
     }
 }
 

@@ -10,7 +10,7 @@
     margin-top: 100px;
 }
 
-#incrementButton,#decrementButton{
+#incrementBtn,#decrementBtn{
     font-size: 20px;
     padding: 3px 10px;
     border: 1.5px solid rgb(165, 163, 163);
@@ -20,7 +20,7 @@
     background: rgb(224, 223, 223);
 }
 
-#decrementButton{
+#decrementBtn{
     padding: 3px 12px;
 }
 
@@ -29,6 +29,6 @@
     font-size: 1.5rem;
 }
 
-#incrementButton:hover,#decrementButton:hover{
+#incrementBtn:hover,#decrementBtn:hover{
     transform: scale(1.2);
 }
