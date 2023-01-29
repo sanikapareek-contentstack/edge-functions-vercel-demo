@@ -1,6 +1,10 @@
+import { generateUniqueId } from "../generateUniqueId.js";
+let i=0;
 class Counter{
     constructor(){
         this.count=0;
+        this.uniqueId=generateUniqueId(i.toString());
+        i++;
     }
 
     increment(){
@@ -14,7 +18,7 @@ class Counter{
     }
 
     updateValue(){
-        const counterValue=document.getElementById("counterValue");
+        const counterValue=document.getElementById(this.uniqueId);
         counterValue.innerText=`Count: ${this.count}`;
     }
 
@@ -32,7 +36,7 @@ class Counter{
 
         counterContainer.classList.add("counterContainer");
         counterHeading.classList.add("counterHeading");
-        counterValue.id="counterValue";
+        counterValue.id=this.uniqueId;
         incrementButton.id="incrementButton";
         decrementButton.id="decrementButton";
 
