@@ -45,7 +45,6 @@ class Timer{
     }
 
     startTimer(){
-        console.log(this.timeout);
         if(this.timeout!==null){
             
             return;
