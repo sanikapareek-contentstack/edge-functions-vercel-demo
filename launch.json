@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/demo",
+      "destination": "/",
+      "statusCode": 308,
+      "response": {
+        "headers": {
+          "x-powered-by": "launch"
+        }
+      }
+    }
+  ]
+}
