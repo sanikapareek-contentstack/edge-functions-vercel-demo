@@ -1,0 +1,18 @@
+{
+  "rewrites": [
+    {
+      "source": "/demo",
+      "destination": "/",
+      "request": {
+        "headers": {
+          "x-api-key": "api-key"
+        }
+      },
+      "response": {
+        "headers": {
+          "x-powered-by": "launch"
+        }
+      }
+    }
+  ]
+}
