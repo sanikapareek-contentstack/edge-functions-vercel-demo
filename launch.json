@@ -1,0 +1,13 @@
+{
+  "redirects": [
+    {
+      "source": "/test",
+      "destination": "/demo",
+      "response": {
+        "headers": {
+          "x-powered-by": "launch"
+        }
+      }
+    }
+  ]
+}
